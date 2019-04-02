@@ -1,3 +1,45 @@
+# tron-todo-list-react
+
+---
+
+## Setup
+
+```
+$ npm install
+```
+
+Install TronLink extension for your Chrome browser.
+
+Add a new network as `http://127.0.0.1:9090` on the TronLink settings and select it.
+
+## Run a private blockchain
+
+```
+$ docker pull trontools/quickstart
+
+$ docker run -it \
+  -p 9090:9090 \
+  --rm \
+  --name tron \
+  trontools/quickstart
+```
+
+Create TronLink account from one of the generated private keys.
+
+## Deploy contracts to the private blockchain
+
+```
+$ npm run migrate
+```
+
+## Run react app
+
+```
+$ npm start
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

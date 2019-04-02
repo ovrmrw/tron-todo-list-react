@@ -2,6 +2,10 @@
   "name": "tron-todo-list-react",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">= 10",
+    "npm": ">= 6.4"
+  },
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.12.2",
@@ -10,13 +14,19 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
+    "tronweb": "2.3.4",
     "typescript": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "migrate": "tronbox migrate",
+    "migrate:reset": "tronbox migrate --reset",
+    "postmigrate": "npm run copy:contracts",
+    "postmigrate:reset": "npm run copy:contracts",
+    "copy:contracts": "cp -r build/contracts/ public/contracts/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,5 +36,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "tronbox": "2.3.16"
+  }
 }
